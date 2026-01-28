@@ -32,11 +32,11 @@ subbtn.addEventListener("click", function () {
             let img = document.createElement('img');
             img.src = data.avatar_url;
             img.width= 120;
-            img.className="border mt-5 rounded-full border border-none ring-2 ring:bg-red-500 "
+            img.className="border mt-5 rounded-full border border-4 border-gray-300  "
 
             let name = document.createElement('h2');
-            name.textContent = data.name;
-            name.className = "text-2xl font-medium mx-auto ";
+            name.textContent = data.login;
+            name.className = "text-2xl font-medium mx-auto  ";
 
             let bio = document.createElement('h3');
             bio.textContent = data.bio;
@@ -58,7 +58,7 @@ subbtn.addEventListener("click", function () {
 
 
             let locationg = document.createElement('h3');
-            locationg.textContent = data.location;
+            locationg.textContent = "🌍 "+ data.location;
 
             image.append(img);
             profile_name.append(name);
