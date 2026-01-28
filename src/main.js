@@ -8,6 +8,8 @@ let con = document.querySelector('.con');
 let image = document.querySelector('.image');
 let profile_name = document.querySelector('.profile_name');
 let twobtn = document.querySelector('.twobtn');
+let followingf = document.querySelector('.Following');
+let repof = document.querySelector('.repo');
 
 const APIURL = "https://api.github.com/users/";
 
@@ -40,14 +42,18 @@ subbtn.addEventListener("click", function () {
             bio.textContent = data.bio;
 
 
-            let followers = document.createElement('button');
-            followers.textContent = data.followers + " followers";  
+            let followers = document.createElement('p');
+            followers.textContent = data.followers;  
             followers.className = " px-4 py-2 text-lg  flex gap-2  rounded-xl ";
             
 
-            let following = document.createElement('button');
-            following.textContent = data.following + " following";
+            let following = document.createElement('p');
+            following.textContent = data.following ;
             following.className = "px-4 py-2 text-lg  flex gap-2  rounded-xl";
+
+            let repo = document.createElement('p');
+            repo.textContent = data.public_repos;
+            repo.className = "px-4 py-2 text-lg  flex gap-2  rounded-xl";
 
 
 
@@ -58,7 +64,9 @@ subbtn.addEventListener("click", function () {
             profile_name.append(name);
            desc.append(bio);
             con.append(locationg);
-             twobtn.append(followers,following);
+             twobtn.append(followers);
+             followingf.append(following);
+             repof.append(repo);
 
 
 
